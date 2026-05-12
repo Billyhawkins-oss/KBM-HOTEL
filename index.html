@@ -236,9 +236,42 @@
     }
 
     @media(max-width: 768px) {
-      nav {
-        display: none;
+      .hamburger {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
       }
+
+      nav {
+        position: absolute;
+        top: 80px;
+        right: 8%;
+        background: #1e293b;
+        padding: 25px;
+        border-radius: 18px;
+        display: none;
+        flex-direction: column;
+        width: 220px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        margin: 12px 0;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+    }
+
+    .hamburger {
+      display: none;
+      color: white;
+    }
 
       .hero h1 {
         font-size: 3rem;
@@ -251,7 +284,11 @@
 <header>
   <div class="logo">KBM HOTEL</div>
 
-  <nav>
+  <div class="hamburger" id="hamburger">
+    ☰
+  </div>
+
+  <nav id="navMenu">
     <a href="#home">Home</a>
     <a href="#rooms">Rooms</a>
     <a href="#about">About</a>
@@ -448,6 +485,13 @@ bookingForm.addEventListener('submit', function(e) {
   e.preventDefault();
   alert('Your booking request has been submitted successfully.');
   bookingForm.reset();
+});
+
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
 });
 </script>
 
