@@ -270,7 +270,17 @@
 
     .hamburger {
       display: none;
-      color: white;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 30px;
+      height: 3px;
+      background: white;
+      border-radius: 10px;
+      transition: 0.3s;
     }
 
       .hero h1 {
@@ -284,8 +294,10 @@
 <header>
   <div class="logo">KBM HOTEL</div>
 
-  <div class="hamburger" id="hamburger">
-    ☰
+  <div class="hamburger" id="hamburger" aria-label="Open Menu">
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
 
   <nav id="navMenu">
